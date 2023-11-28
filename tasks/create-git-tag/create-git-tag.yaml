@@ -3,7 +3,7 @@
 apiVersion: tekton.dev/v1beta1
 kind: Task
 metadata:
-  name: stakater-create-git-tag-0.0.7
+  name: stakater-create-git-tag-0.0.9
   annotations:
     description: |
       Creates version for repo, by updating the patch of the latest git tag
@@ -34,7 +34,7 @@ spec:
       description: Current tag of application before update
   steps:
     - name: create-tag-file
-      image: gittools/gitversion:5.9.0
+      image: gittools/gitversion:6.0.0
       command: ["/bin/bash"]
       workingDir: $(workspaces.source.path)
       args:
